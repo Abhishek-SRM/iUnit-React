@@ -1,21 +1,21 @@
-name: Ignore database-config.xml
+name: Ignore extension.ts
 
 on:
   pull_request:
     paths:
-      - '**/database-config.xml'
+      - '**/extension.ts'
 
 jobs:
   check_config_changes:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check for database-config.xml changes
+      - name: Check for extension.ts changes
         id: check_changes
         run: |
           CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }})
 
           if echo "$CHANGED_FILES" | grep -q '^database-config.xml$'; then
-            echo "Error: You're trying to modify database-config.xml. This file cannot be modified during a pull request."
+            echo "Error: You're trying to modify extension.ts. This file cannot be modified during a pull request."
             exit 1
           fi
