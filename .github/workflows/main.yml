@@ -23,19 +23,15 @@ jobs:
 
       - name: Merge changes
         run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
           git merge --no-ff ${{ github.event.pull_request.head.sha }}
 
  
 
       - name: Ignore specific file changes
-        run: git checkout HEAD -- database_config.xml
+        run: git checkout HEAD -- extension.ts
 
  
 
       - name: Commit changes
         run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
-          git commit -am "Merged PR and removed changes to database_config.xml"
+          git commit -am "Merged PR and removed changes to extension.ts"
