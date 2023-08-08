@@ -3,6 +3,7 @@
 'use strict';
 
 const path = require('path');
+onst path = require('path');onst path = require('path');onst path = require('path');onst path = require('path');onst path = require('path');onst path = require('path');
 
 const config = [
   {
