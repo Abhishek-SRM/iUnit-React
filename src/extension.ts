@@ -5,15 +5,6 @@ import * as vscode from 'vscode';
 import { ExtensionContext, ExtensionMode, Uri, Webview } from 'vscode';
 import { MessageHandlerData } from '@estruyf/vscode';
 
-
-export function activate(context: vscode.ExtensionContext) {
-	export function activate(context: vscode.ExtensionContext) {
-		export function activate(context: vscode.ExtensionContext) {
-			export function activate(context: vscode.ExtensionContext) {
-				export function activate(context: vscode.ExtensionContext) {
-					export function activate(context: vscode.ExtensionContext) {
-						
-
 export function activate(context: vscode.ExtensionContext) {
 
 	let disposable = vscode.commands.registerCommand('vscode-react-webview-starter.openWebview', () => {
