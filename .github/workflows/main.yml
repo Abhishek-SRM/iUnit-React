@@ -1,37 +1,23 @@
-name: Merge with Ignore
-
- 
-
 on:
   pull_request:
     types:
       - synchronize
 
- 
-
 jobs:
   merge:
     runs-on: ubuntu-latest
-
- 
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
- 
-
       - name: Merge changes
-        run: |
-          git merge --no-ff ${{ github.event.pull_request.head.sha }}
-
- 
-
-      - name: Ignore specific file changes
+        run: git merge --no-ff ${{ github.event.pull_request.head.sha }}
+      
+      - name: Restore specific file
         run: git checkout HEAD -- extension.ts
-
- 
 
       - name: Commit changes
         run: |
-          git commit -am "Merged PR and removed changes to extension.ts"
+          git commit -am "Merged PR and restored extension.ts"
+          git push
