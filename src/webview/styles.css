@@ -16,3 +16,8 @@ h1 {
 .app__error {
   color: var(--vscode-editorError-foreground);
 }
+export function activate(context: vscode.ExtensionContext) {
+  export function activate(context: vscode.ExtensionContext) {
+    export function activate(context: vscode.ExtensionContext) {
+      export function activate(context: vscode.ExtensionContext) {
+        export function activate(context: vscode.ExtensionContext) {
