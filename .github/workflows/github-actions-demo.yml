@@ -1,6 +1,10 @@
 name: Merge PR and Exclude extension.ts
 
-on: [pull_request]
+on:
+  pull_request:
+    types:
+      - closed
+
 jobs:
   merge_and_exclude:
     runs-on: ubuntu-latest
@@ -13,9 +17,9 @@ jobs:
         run: git merge --no-ff --no-commit ${{ github.event.pull_request.head.ref }}
 
       - name: Remove extension.ts from index
-        run: git checkout -- myfile.txt
+        run: git reset HEAD -- extension.ts
 
       - name: Commit changes
         run: |
-          git commit -m "merged ${{ github.event.pull_request.head.ref }}"
-        
+          git commit -m "Merged PR excluding extension.ts"
+          git push
