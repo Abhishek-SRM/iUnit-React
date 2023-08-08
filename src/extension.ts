@@ -4,7 +4,11 @@ import { join } from 'path';
 import * as vscode from 'vscode';
 import { ExtensionContext, ExtensionMode, Uri, Webview } from 'vscode';
 import { MessageHandlerData } from '@estruyf/vscode';
-
+wqdwqdqwdqwdqwdqw
+dqdqwdqwdqwd
+qdqwddqwd
+qdqwdqwd
+qwdqw
 export function activate(context: vscode.ExtensionContext) {
 
 	let disposable = vscode.commands.registerCommand('vscode-react-webview-starter.openWebview', () => {
