@@ -1,21 +1,33 @@
-name: Ignore extension.ts
+name: CI
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
-    paths:
-      - '**/extension.ts'
+    branches:
+      - main
 
 jobs:
-  check_config_changes:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check for extension.ts changes
-        id: check_changes
-        run: |
-          CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }})
+      - name: Checkout
+        uses: actions/checkout@v2
 
-          if echo "$CHANGED_FILES" | grep -q '^database-config.xml$'; then
-            echo "Error: You're trying to modify extension.ts. This file cannot be modified during a pull request."
-            exit 1
-          fi
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Test
+        run: npm test
+
+      - name: Ignore extension.ts file during merge request
+        run: |
+          git merge --no-commit ${{ github.event.pull_request.head.ref }}
+          git reset HEAD extension.ts
+          git checkout -- extension.ts
+          git commit -m "merged ${{ github.event.pull_request.head.ref }}"
