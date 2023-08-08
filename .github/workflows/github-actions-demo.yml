@@ -10,12 +10,12 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Merge changes
-        run: git merge --no-ff --no-commit <merge-branch>
+        run: git merge --no-ff --no-commit ${{ github.event.pull_request.head.ref }}
 
       - name: Remove extension.ts from index
         run: git checkout -- myfile.txt
 
       - name: Commit changes
         run: |
-          git commit -m "merged <merge-branch>"
+          git commit -m "merged ${{ github.event.pull_request.head.ref }}"
         
