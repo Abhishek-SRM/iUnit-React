@@ -1,9 +1,6 @@
 name: Merge PR and Exclude extension.ts
 
-on:
-  pull_request:
-    types:
-      - closed
+on: [pull_request]
 
 jobs:
   merge_and_exclude:
