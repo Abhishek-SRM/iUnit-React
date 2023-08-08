@@ -1,22 +1,41 @@
-name: CI
+name: Merge with Ignore
+
+ 
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
-    branches:
-      - main
+    types:
+      - synchronize
+
+ 
 
 jobs:
-  build:
+  merge:
     runs-on: ubuntu-latest
 
+ 
+
     steps:
-  
-      - name: Ignore extension.ts file during merge request
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+ 
+
+      - name: Merge changes
         run: |
-          git merge --no-commit ${{ github.event.pull_request.head.ref }}
-          git reset HEAD extension.ts
-          git checkout -- extension.ts
-          git commit -m "merged ${{ github.event.pull_request.head.ref }}"
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git merge --no-ff ${{ github.event.pull_request.head.sha }}
+
+ 
+
+      - name: Ignore specific file changes
+        run: git checkout HEAD -- database_config.xml
+
+ 
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git commit -am "Merged PR and removed changes to database_config.xml"
