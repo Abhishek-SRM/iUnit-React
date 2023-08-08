@@ -13,6 +13,34 @@ export function activate(context: vscode.ExtensionContext) {
 				export function activate(context: vscode.ExtensionContext) {
 					export function activate(context: vscode.ExtensionContext) {
 						
+export function activate(context: vscode.ExtensionContext) {
+	export function activate(context: vscode.ExtensionContext) {
+		export function activate(context: vscode.ExtensionContext) {
+			export function activate(context: vscode.ExtensionContext) {
+				export function activate(context: vscode.ExtensionContext) {
+					export function activate(context: vscode.ExtensionContext) {
+						
+export function activate(context: vscode.ExtensionContext) {
+	export function activate(context: vscode.ExtensionContext) {
+		export function activate(context: vscode.ExtensionContext) {
+			export function activate(context: vscode.ExtensionContext) {
+				export function activate(context: vscode.ExtensionContext) {
+					export function activate(context: vscode.ExtensionContext) {
+						
+export function activate(context: vscode.ExtensionContext) {
+	export function activate(context: vscode.ExtensionContext) {
+		export function activate(context: vscode.ExtensionContext) {
+			export function activate(context: vscode.ExtensionContext) {
+				export function activate(context: vscode.ExtensionContext) {
+					export function activate(context: vscode.ExtensionContext) {
+						
+export function activate(context: vscode.ExtensionContext) {
+	export function activate(context: vscode.ExtensionContext) {
+		export function activate(context: vscode.ExtensionContext) {
+			export function activate(context: vscode.ExtensionContext) {
+				export function activate(context: vscode.ExtensionContext) {
+					export function activate(context: vscode.ExtensionContext) {
+						
 
 export function activate(context: vscode.ExtensionContext) {
 
